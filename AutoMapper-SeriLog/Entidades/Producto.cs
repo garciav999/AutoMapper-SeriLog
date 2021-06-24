@@ -7,8 +7,8 @@ namespace AutoMapper_SeriLog.Entidades
 {
     public class Producto
     {
-        public int Id { get; set; }
-        public double Descripcion { get; set; }
-        public double Precio { get; set; }
+        public int Id { get; set; } // Identificador de Usuario
+        public double Descripcion { get; set; } // Descripcion del producto
+        public double Precio { get; set; } // Precio del producto
     }
 }
