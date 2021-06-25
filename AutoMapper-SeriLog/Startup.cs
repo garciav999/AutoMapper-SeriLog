@@ -11,6 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using AutoMapper_SeriLog.Mapping;
+using AutoMapper_SeriLog.Services;
 
 namespace AutoMapper_SeriLog
 {
@@ -32,6 +35,18 @@ namespace AutoMapper_SeriLog
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AutoMapper_SeriLog", Version = "v1" });
             });
+
+            // Configurando el Auto Mapper
+            var mapperConfig = new MapperConfiguration(
+                m =>
+                {
+                    m.AddProfile(new MappingProfile());
+                }
+                );
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddTransient<IProductoServices,ProductoServices>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

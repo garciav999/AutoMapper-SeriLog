@@ -9,7 +9,7 @@ namespace AutoMapper_SeriLog.Entidades
     {
 
         public int Id { get; set; } // Identificador del producto
-        public double Descripcion { get; set; } // Descripcion del producto
+        public string Descripcion { get; set; } // Descripcion del producto
         public double Precio { get; set; } //  Precio del producto
 
     }
